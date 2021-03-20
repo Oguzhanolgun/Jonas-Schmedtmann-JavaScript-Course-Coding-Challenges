@@ -57,3 +57,39 @@ const game = {
     team2: 6.5,
   },
 };
+
+// Solution for 1
+for (const [i, player] of game.scored.entries()) {
+  console.log(`Goal ${i + 1}: ${player}`);
+}
+
+// Solution for 2
+const odds = Object.values(game.odds);
+let avg = 0;
+for (const odd of odds) avg += odd;
+avg /= odds.length;
+console.log(avg);
+
+// Solution for 3
+for (const [team, odd] of Object.entries(game.odds)) {
+  game[team] !== undefined
+    ? console.log(`Odd of victory ${game[team]} : ${odd}`)
+    : console.log(`Odd of draw : ${odd}`);
+}
+
+/* 
+Solution for 3 and method 2
+
+for (const [team, odd] of Object.entries(game.odds)) {
+  const teamStr = team === 'x' ? 'draw' : `victory ${game[team]}`;
+  console.log(`Odd of ${teamStr} ${odd}`);
+}
+*/
+
+// Solution for 4
+
+const scorers = {};
+for (const player of game.scored) {
+  scorers[player] ? scorers[player]++ : (scorers[player] = 1);
+}
+console.log(scorers);
