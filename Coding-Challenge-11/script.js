@@ -1,4 +1,4 @@
-// Coding Challenge #2
+// Coding Challenge 11
 
 /* 
 This is more of a thinking challenge than a coding challenge 🤓
